@@ -290,17 +290,7 @@ button{
 			Media Queries
 *****************************************/
 
-@media screen and (min-height: 800px){
-	html{
-		font-size:12px;
-	}
-}
-
-@media screen and (min-height: 1200px){
-	html{
-		font-size:20px;
-	}
-}
+/* use media queries to make this responsive */
 
 
 
