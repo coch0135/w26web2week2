@@ -313,5 +313,15 @@ button{
 
 /* use media queries to make this responsive */
 
+@media screen and (min-height:800px){
+	html {
+		font-size: 12.5px;
+	}
+}
 
+@media screen and (min-height:1200px){
+	html {
+		font-size: 15px;
+	}
+}
 
