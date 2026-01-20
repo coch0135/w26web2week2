@@ -42,7 +42,7 @@ let playing = false;
 //create the game board (generate squares)
 createBackground();
 function createBackground(){
-	const bgTemplate = `<div class="bg-block"></div>`;
+	const bgTemplate = `<div class="bg-block">a</div>`;
 	const background = document.querySelector(".game");
 	for(let i=0; i<56; i++){
 		background.innerHTML += bgTemplate;

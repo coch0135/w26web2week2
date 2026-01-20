@@ -105,16 +105,26 @@ h4{
 ***********************************************************/
 main{
 	/*use flexbox to keep the game centred in the screen */
+	display: flex;
+	justify-content: center;
 }
 
 .game{
 	/* use flex-basis to set a fixed width for this flexed element */
+	flex-basis: 42rem;
+	/* 42rem = 42 x 10px = 420px */
 	position:relative;
 	width:100%;
 	height:48rem;
 
 	/* use grid to structure the game's background
-	and stretch it across the width of the game */	
+	and stretch it across the width of the game */
+	display: grid;
+	grid-template-columns: repeat(7, 1fr);	
+	/* create 7 columns, each 1 fraction wide */
+	/* grid-template-rows: repeat(8, 1fr); this is one solution to space evenly by height, if you know how many rows*/
+	align-content: stretch;
+	/* this tells the content to stretch to fill the whole height */
 }
 
 .bg-block{
@@ -131,6 +141,8 @@ main{
 	top:0;
 	left:0;
 	/* use flexbox to make the rows stack from the bottom */
+	display: flex;
+	flex-direction: column-reverse;
 }
 
 .row{
@@ -177,6 +189,7 @@ main{
 
 .text{
 	/* use flex-basis to set a fixed width for this flexed item */
+	flex-basis: 25rem;
 	padding-left:1em;
 	font-size:1.6rem;
 }
@@ -215,13 +228,24 @@ main{
 *****************************************/
 .overlay{
 	/* use position to make the overlay appear over everything else */
+	position: fixed;
+	top: 0;
+	left: 0w;
+	width: 100vw;
+	/* vw stands for viewport width */
+	height: 100vp;
+	z-index: 10;
+	/* z-index is a 3d stacking order, like layers */
+
+	
 	display:none;
 	background:rgba(255,255,255,0.8);
 	/* use justify-content to centre the contents of a flexed item */
+	justify-content: center;
 }
 
 .overlay.show{
-	display:block;
+	display:flex;
 	/* use flexbox to centre the content of the overlay */
 }
 
@@ -259,6 +283,9 @@ main{
 .buttons{
 	/* use flexbox to distribute the buttons across the overlay */
 	padding:1.6rem 0;
+	display: flex;
+	justify-content: space-evenly;
+	background-color: aquamarine;
 }
 
 button{
